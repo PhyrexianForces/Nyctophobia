@@ -38,10 +38,11 @@ public class Nyctophobia
     {
         IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(this::commonSetup);
-
-
-
         MinecraftForge.EVENT_BUS.register(this);
+
+        //Register things here
+        ModItems.register(modEventBus);
+        
         modEventBus.addListener(this::addCreative);
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
