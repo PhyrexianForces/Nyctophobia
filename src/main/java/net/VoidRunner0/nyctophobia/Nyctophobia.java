@@ -1,6 +1,9 @@
 package net.VoidRunner0.nyctophobia;
 
 import com.mojang.logging.LogUtils;
+import net.VoidRunner0.nyctophobia.block.ModBlocks;
+import net.VoidRunner0.nyctophobia.item.ModItems;
+import net.VoidRunner0.nyctophobia.loot.ModLootModifiers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -42,6 +45,8 @@ public class Nyctophobia
 
         //Register things here
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
         
         modEventBus.addListener(this::addCreative);
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
